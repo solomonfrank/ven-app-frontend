@@ -8,7 +8,7 @@ const PageLayout = (props) => {
       <div class="page-wrapper">
         <Header />
 
-        <main class="main">
+        <main class="container-fluid">
           <div class="main-container">
             <div class="main-content">
               <div class="container-fluid">{props.children}</div>
