@@ -1,1 +1,47 @@
+.card {
+  box-shadow: 2px 2px 2px rgba(90, 97, 105, 0.1),
+    2px 2px 2px rgba(90, 97, 105, 0.1), 2px 2px rgba(90, 97, 105, 0.12),
+    1px 1px rgba(90, 97, 105, 0.1);
 
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+  border-radius: 0.625rem;
+}
+.card-ls {
+  cursor: pointer;
+}
+.card-res {
+  box-shadow: 2px 2px 2px rgba(90, 97, 105, 0.1),
+    2px 2px 2px rgba(90, 97, 105, 0.1), 2px 2px rgba(90, 97, 105, 0.12),
+    1px 1px rgba(90, 97, 105, 0.1);
+
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+
+  border-radius: 0.625rem;
+  cursor: pointer;
+}
+
+.item-prop {
+  display: flex;
+}
+
+.vl {
+  border-left: 2px solid black;
+  height: 40px;
+  margin: 4px;
+}
+.vl {
+  margin-top: 10px;
+}
+.title-val {
+  margin: 0;
+  font-weight: bold;
+}
+.title-text {
+  margin-bottom: 10px;
+  color: gray;
+  text-transform: capitalize;
+}
+.title-val-upper {
+  text-transform: capitalize;
+}
