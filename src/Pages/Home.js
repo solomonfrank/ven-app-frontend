@@ -61,10 +61,32 @@ class Home extends Component {
     );
   };
 
+  renderListOfFilter = () => {
+    const { listToFilter } = this.props;
+    if (listToFilter.loading) {
+      return <Skeleton width={500} height={200} count={4} />;
+    } else if (
+      listToFilter &&
+      listToFilter.filterCards &&
+      listToFilter &&
+      listToFilter.filterCards.length
+    ) {
+      return listToFilter.filterCards.map((param) => (
+        <FilterListCard
+          result={param}
+          filterByParams={this.filterByParams}
+          key={param.id}
+        />
+      ));
+    } else {
+      return <NoData message="No Data Availble" style="no-data-img" />;
+    }
+  };
+
   renderListOfCar = () => {
     const { listOfCars } = this.props;
     if (listOfCars.loading) {
-      return <Skeleton width={"100%"} height={200} count={4} />;
+      return <Skeleton width={400} height={200} count={4} />;
     } else if (
       listOfCars &&
       listOfCars.searchedCars &&
@@ -99,17 +121,8 @@ class Home extends Component {
           <div className="col-md-4">
             <div className="filter-title">
               <h4>Filter by</h4>
-              {listToFilter && listToFilter.filterCards ? (
-                listToFilter.filterCards.map((param) => (
-                  <FilterListCard
-                    result={param}
-                    filterByParams={this.filterByParams}
-                    key={param.id}
-                  />
-                ))
-              ) : (
-                <Skeleton width={"100%"} height={200} count={4} />
-              )}
+
+              {this.renderListOfFilter()}
             </div>
           </div>
           <div className="col-md-8">
