@@ -99,15 +99,17 @@ class Home extends Component {
           <div className="col-md-4">
             <div className="filter-title">
               <h4>Filter by</h4>
-              {listToFilter &&
-                listToFilter.filterCards &&
+              {listToFilter && listToFilter.filterCards ? (
                 listToFilter.filterCards.map((param) => (
                   <FilterListCard
                     result={param}
                     filterByParams={this.filterByParams}
                     key={param.id}
                   />
-                ))}
+                ))
+              ) : (
+                <Skeleton width={"100%"} height={200} count={4} />
+              )}
             </div>
           </div>
           <div className="col-md-8">
